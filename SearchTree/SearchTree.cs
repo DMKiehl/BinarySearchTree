@@ -36,6 +36,7 @@ namespace SearchTree
             {
                 Node newNode = root;
                 Node parentNode;
+
                 while (true)
                 {
                     parentNode = newNode;
@@ -63,6 +64,38 @@ namespace SearchTree
 
         }
 
+        public bool Search(int num)
+        {
+            Node node = root;
+
+            while (node != null)
+            {
+
+                if(num == node.data)
+                {
+                    return true;
+                }
+
+                else if (num > node.data)
+                {
+                    node = node.rightChild;
+                }
+
+                else if (num < node.data)
+                {
+                    node = node.leftChild;
+                }
+
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+
+
+        }
+
     }
 }
-}
+
